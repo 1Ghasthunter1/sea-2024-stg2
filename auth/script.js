@@ -28,6 +28,7 @@ function login() {
     loginButton.disabled = false;
 
     if (authResult) {
+      window.localStorage.setItem("auth", true);
       window.location.href = "/index.html";
     } else {
       errorP.style.display = "block";
