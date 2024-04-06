@@ -73,8 +73,40 @@ input:hover {
     border-radius: 100px;
     cursor: pointer;
     transition: background 0.1s ease-in-out;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
 }
 
 .sign-in-button:hover {
     background: rgb(46, 161, 255, 0.8);
+}
+
+.secondary-p {
+    font-size: 12px;
+    margin-top: 20px;
+    color: #535353;
+}
+
+a {
+    text-decoration: none ;
+    transition: text-decoration 0.1s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline ;
+    text-underline-offset: 2px;
+}
+
+.animate-spin {
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

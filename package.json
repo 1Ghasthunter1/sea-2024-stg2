@@ -1,0 +1,17 @@
+{
+  "name": "sea-2024-stg2",
+  "version": "1.0.0",
+  "description": "used ONLY for development (static HTTP hosting)",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "http-server -p 8080"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "i": "^0.3.7",
+    "npm": "^10.5.1"
+  }
+}

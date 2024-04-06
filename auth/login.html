@@ -4,41 +4,65 @@
     <title>Login | HunterSnap</title>
     <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="script.js"></script>
   </head>
 
   <body>
     <div class="login-container">
       <div class="login-card">
+        <img
+          src="../img/hunter-bitmoji-pfp.webp"
+          alt="Hunter Bitmoji"
+          style="width: 72px; margin-top: 24px"
+        />
         <h2>Log in to Hunter Chat</h2>
-        <div class="sign-in-container">
+        <form class="sign-in-container">
           <label for="username" class="login-label">Username or Email</label>
           <input
             class="sign-in-form"
-            name="accountIdentifier"
+            name="username"
             autocomplete="username"
             type="text"
-            id="accountIdentifier"
-            class="form-control"
-            value=""
+            id="username"
           />
           <label for="password" class="login-label" style="margin-top: 12px"
             >Password</label
           >
           <input
             class="sign-in-form"
-            name="accountIdentifier"
+            name="password"
             autocomplete="username"
-            type="text"
-            id="accountIdentifier"
-            class="form-control"
-            value=""
+            type="password"
+            id="password"
           />
 
-          <button class="sign-in-button" type="submit" style="margin-top: 12px">
-            Login
+          <button
+            onclick="login()"
+            class="sign-in-button"
+            type="button"
+            style="margin-top: 12px"
+          >
+            Log In
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="animate-spin spinner"
+              style="width: 14px; margin-left: 12px; fill: white; display: none"
+            >
+              <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path
+                d="M222.7 32.1c5 16.9-4.6 34.8-21.5 39.8C121.8 95.6 64 169.1 64 256c0 106 86 192 192 192s192-86 192-192c0-86.9-57.8-160.4-137.1-184.1c-16.9-5-26.6-22.9-21.5-39.8s22.9-26.6 39.8-21.5C434.9 42.1 512 140 512 256c0 141.4-114.6 256-256 256S0 397.4 0 256C0 140 77.1 42.1 182.9 10.6c16.9-5 34.8 4.6 39.8 21.5z"
+              />
+            </svg>
           </button>
-        </div>
+          <a
+            href="https://google.com"
+            class="secondary-p"
+            style="margin-left: auto; margin-bottom: 0"
+          >
+            Forgot your password?
+          </a>
+        </form>
       </div>
     </div>
   </body>
