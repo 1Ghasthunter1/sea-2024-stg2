@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Hunter Snap | Home</title>
     <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="app-container">
-      <div class="app-left"></div>
-      <div class="app-right">
-        <div
-          style="
-            border-radius: 32px;
-            background: #fff;
-            width: 100%;
-            height: 100%;
-            background-image: url('/img/clouds.webp');
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          "
-        >
-          <div style="height: 65%">
-            <img src="/img/hunter-bitmoji-full.webp" style="height: 100%" />
-          </div>
+        <div class="app-left"></div>
+        <div class="app-right">
+            <div class="container">
+                <div id="card-pre" style="width: 50%" class="language-css" tabindex="0">
+                    <img src="../img/hunter-bitmoji-pfp.webp" alt="Hunter Bitmoji"
+                        style="width: 144px; margin-top: 24px" />
+                    <h2>Hi, I'm Hunter</h2>
+                    <pre contenteditable style="margin-top:2rem"><code class="language-css"><span class="token property">info</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token property">school</span><span class="token punctuation">:</span> GCC
+  <span class="token property">favorite food</span><span class="token punctuation">:</span> Sushi
+  <span class="token property">job</span><span class="token punctuation">:</span> None
+<span class="token punctuation">}</span>
+</code></pre>
+                </div>
+            </div>
+
+
+            <img src="/img/hunter-bitmoji-full.webp" style="
+              position: absolute;
+              height: 65%;
+              left: 65%;
+              top:20%;
+              transform: translateX(-20%);
+            " />
         </div>
-      </div>
     </div>
-  </body>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
 </html>
