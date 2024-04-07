@@ -1,4 +1,5 @@
-const pre = document.getElementById("floating-card");
+var pre = document.getElementById("floating-card");
+
 
 document.addEventListener("mousemove", (e) => {
   rotateElement(e, pre);
@@ -12,7 +13,7 @@ function rotateElement(event, element) {
   const x = event.clientX;
   const y = event.clientY;
 
-  var cloudContainer = document.querySelector("#cloud-container");
+  var cloudContainer = document.querySelector(".app-right>.container");
 
   //get low and high x coords and low and high y coords of cloudContainer
   var cloudContainerRect = cloudContainer.getBoundingClientRect();
@@ -38,7 +39,4 @@ function rotateElement(event, element) {
   element.style.setProperty("--rotateY", -1 * offsetY + "deg");
 }
 
-function signOut() {
-  window.localStorage.clear();
-  window.location.href = "/auth/login.html";
-}
+

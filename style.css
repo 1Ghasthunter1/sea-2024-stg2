@@ -59,6 +59,7 @@ p.bio {
     flex-direction: column;
     align-items: center;
     padding-top: 1rem;
+    flex-shrink: 0;
 }
 
 .app-right {
@@ -79,10 +80,12 @@ p.bio {
     background-size: cover;
     background-position: center;
     position: relative;
-    justify-content: start;
+    justify-content: space-between;
     padding-left: 72px;
+    padding-right: 72px;
     align-items: center;
-    display: flex
+    display: flex;
+    flex-grow: 1;
 }
 
 .people-container {
@@ -122,7 +125,17 @@ p.bio {
     background: #1d96ff;
 }
 
+#stats-container {
+    display: none
+}
 
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+}
 
 
 .user-card {

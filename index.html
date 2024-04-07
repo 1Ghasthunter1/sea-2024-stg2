@@ -1,94 +1,166 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Hunter Snap | Home</title>
     <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
     <link rel="stylesheet" href="style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="app-container">
-        <div class="app-left">
-            <div
-                style="margin-left: auto; margin-right: auto; color: #838383; font-size: 20px; font-weight:500; margin-bottom:16px;">
-                Hunter Snap
-            </div>
-            <div class="people-container">
-                <div class="stats-card">
-                    <div style="display: flex; align-items: center; ">
-                        <img src="https://sdk.bitmoji.com/render/panel/bafde0ca-c2bf-430d-9434-df437e85e7f1-305990390_51-s5-v1.webp?transparent=1&scale=0"
-                            alt="Hunter Bitmoji" style="height:60px; transform: rotateY(180deg)" class="card-img" />
-                        <div style="margin-left: 12px;">
-                            <h3 class="card-name" style="margin-bottom: 4px; font-weight: 600; font-size: 18px">
-                                Aggregated Stats
-                            </h3>
-                            <p class="card-school" style="color:#fff">
-                                See some fun stats about my friends!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <input class="search-input" placeholder="Search" style="margin-top:24px">
-
-            <div id="people-container" class="people-container" style="color: white;">
-                <div class="person-card" id="person-card">
-                    <div style="display: flex; align-items: center; ">
-                        <img src="../img/hunter-bitmoji-pfp.webp" alt="Hunter Bitmoji" style="height:60px;"
-                            class="card-img" />
-                        <div style="margin-left: 12px;">
-                            <h3 class="card-name" style="margin-bottom: 4px;">
-                                Hunter Pruett
-                            </h3>
-                            <p class="card-school" style="color:#7f7f7f">
-                                Glendale CC
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hover-btn" onclick="signOut()">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    style="width:24px;" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
-                </svg>
-
-            </div>
-
+      <div class="app-left">
+        <div
+          style="
+            margin-left: auto;
+            margin-right: auto;
+            color: #838383;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 16px;
+          "
+        >
+          Hunter Snap
         </div>
-        <div class="app-right">
-            <div class="container" id="cloud-container">
-                <div id="floating-card" style="width: 50%" class="language-css" tabindex="0">
-                    <img src="../img/hunter-bitmoji-pfp.webp" alt="Hunter Bitmoji"
-                        style="width: 144px; margin-top: 24px" />
-                    <p class="snapchat"></p>
-                    <h2></h2>
-                    <p class="bio"></p>
-                    <pre contenteditable style="margin-top:4rem"><code class="language-css"><span class="token punctuation">{</span>
+        <div class="people-container">
+          <div class="stats-card" onclick="showStats()">
+            <div style="display: flex; align-items: center">
+              <img
+                src="https://sdk.bitmoji.com/render/panel/bafde0ca-c2bf-430d-9434-df437e85e7f1-305990390_51-s5-v1.webp?transparent=1&scale=0"
+                alt="Hunter Bitmoji"
+                style="height: 60px; transform: rotateY(180deg)"
+                class="card-img"
+              />
+              <div style="margin-left: 12px">
+                <h3
+                  class="card-name"
+                  style="margin-bottom: 4px; font-weight: 600; font-size: 18px"
+                >
+                  Aggregated Stats
+                </h3>
+                <p class="card-school" style="color: #fff">
+                  See some fun stats about my friends!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <input
+          class="search-input"
+          placeholder="Search"
+          style="margin-top: 24px"
+        />
+
+        <div
+          id="people-container"
+          class="people-container"
+          style="color: white"
+        >
+          <div class="person-card" id="person-card">
+            <div style="display: flex; align-items: center">
+              <img
+                src="../img/hunter-bitmoji-pfp.webp"
+                alt="Hunter Bitmoji"
+                style="height: 60px"
+                class="card-img"
+              />
+              <div style="margin-left: 12px">
+                <h3 class="card-name" style="margin-bottom: 4px">
+                  Hunter Pruett
+                </h3>
+                <p class="card-school" style="color: #7f7f7f">Glendale CC</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hover-btn" onclick="signOut()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            style="width: 24px"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="app-right">
+        <div class="container">
+          <div class="flex-container" id="person-container">
+            <div
+              id="floating-card"
+              style="width: 100%"
+              class="language-css"
+              tabindex="0"
+            >
+              <img
+                src="../img/hunter-bitmoji-pfp.webp"
+                alt="Hunter Bitmoji"
+                style="width: 144px; margin-top: 24px"
+              />
+              <p class="snapchat"></p>
+              <h2></h2>
+              <p class="bio"></p>
+              <pre
+                contenteditable
+                style="margin-top: 4rem"
+              ><code class="language-css"><span class="token punctuation">{</span>
   <span class="token property">school</span><span class="token punctuation">:</span> <span class="school">GCC</span>
   <span class="token property">favorite food</span><span class="token punctuation">:</span> <span class="food">GCC</span>
   <span class="token property">job</span><span class="token punctuation">:</span> <span class="job">GCC</span>
   <span class="token property">age</span><span class="token punctuation">:</span> <span class="age">19</span>
 <span class="token punctuation">}</span>
 </code></pre>
-                </div>
             </div>
+            <img
+              id="full-bitmoji-img"
+              src="/img/hunter-bitmoji-full.webp"
+              style="height: 65%"
+            />
+          </div>
 
-
-            <img id="full-bitmoji-img" src="/img/hunter-bitmoji-full.webp" style="
-              position: absolute;
-              height: 65%;
-              left: 65%;
-              top:20%;
-              transform: translateX(-20%);
-            " />
+          <div class="flex-container" id="stats-container">
+            <div
+              id="floating-card"
+              style="width: 100%"
+              class="language-css"
+              tabindex="0"
+            >
+              <img
+                src="../img/hunter-bitmoji-pfp.webp"
+                alt="Hunter Bitmoji"
+                style="width: 144px; margin-top: 24px"
+              />
+              <p class="snapchat"></p>
+              <h2></h2>
+              <p class="bio"></p>
+              <pre
+                contenteditable
+                style="margin-top: 4rem"
+              ><code class="language-css"><span class="token punctuation">{</span>
+  <span class="token property">school</span><span class="token punctuation">:</span> <span class="school">GCC</span>
+  <span class="token property">favorite food</span><span class="token punctuation">:</span> <span class="food">GCC</span>
+  <span class="token property">job</span><span class="token punctuation">:</span> <span class="job">GCC</span>
+  <span class="token property">age</span><span class="token punctuation">:</span> <span class="age">19</span>
+<span class="token punctuation">}</span>
+</code></pre>
+            </div>
+            <img
+              id="full-bitmoji-img"
+              src="/img/hunter-bitmoji-full.webp"
+              style="height: 65%"
+            />
+          </div>
         </div>
-    </div>
+      </div>
     </div>
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="content-script.js"></script>
-</body>
-
+  </body>
 </html>

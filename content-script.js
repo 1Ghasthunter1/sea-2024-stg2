@@ -119,6 +119,8 @@ var personCard = document.getElementById("person-card");
 var searchInput = document.querySelector(".search-input");
 var floatingCard = document.getElementById("floating-card");
 var fullBitmojiImg = document.getElementById("full-bitmoji-img");
+var personContainer = document.getElementById("person-container");
+var statsContainer = document.getElementById("stats-container");
 
 function createCard(person) {
   var card = personCard.cloneNode(true);
@@ -147,6 +149,9 @@ function showPeople() {
 }
 
 function setPerson(id) {
+  personContainer.style.setProperty("display", "flex");
+  statsContainer.style.setProperty("display", "none");
+
   const person = people.find((person) => person.id === id);
   if (!person) return;
   floatingCard.querySelector(
@@ -187,3 +192,13 @@ window.addEventListener("load", () => {
   setPerson(1);
 });
 searchInput.addEventListener("input", onSearchInput);
+
+function showStats() {
+  personContainer.style.setProperty("display", "none");
+  statsContainer.style.setProperty("display", "flex");
+}
+
+function signOut() {
+  window.localStorage.clear();
+  window.location.href = "/auth/login.html";
+}
