@@ -3,6 +3,8 @@ const config = {
   password: "password",
 };
 
+//
+
 var passwordHintElement = document.getElementById("password-hint");
 
 function authenticate(username, password) {
