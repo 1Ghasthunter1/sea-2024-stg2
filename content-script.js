@@ -118,7 +118,7 @@ let mPeople = people.slice();
 
 var peopleContainer = document.getElementById("people-container");
 var personCard = document.getElementById("person-card");
-var searchInput = document.querySelector(".search-input");
+var searchInput = document.querySelector("#search-bar");
 var floatingCard = document.getElementById("floating-card");
 var fullBitmojiImg = document.getElementById("full-bitmoji-img");
 var floatingCardPerson = floatingCard.querySelector(".person");
@@ -139,6 +139,7 @@ function createCard(person) {
     person.firstName + " " + person.lastName;
   card.querySelector(".card-img").src = person.pfpUrl;
   card.querySelector(".card-school").innerText = person.school;
+  card.querySelector("#edit-person-btn");
 
   // add an onclick for the card
   card.addEventListener("click", () => {
@@ -161,6 +162,10 @@ function showPeople() {
 function setPerson(id) {
   hideStats();
 
+  showModalFn = () => {
+    showModal(id);
+  };
+
   const person = people.find((person) => person.id === id);
   if (!person) return;
   floatingCard.querySelector(
@@ -175,8 +180,18 @@ function setPerson(id) {
   floatingCard.querySelector(".food").innerText = person.food;
   floatingCard.querySelector(".job").innerText = person.job;
   floatingCard.querySelector(".age").innerText = person.age;
-
+  floatingCard.querySelector("#edit-person-btn").onclick = () =>
+    showModal(person.id);
   fullBitmojiImg.src = person.fullUrl;
+}
+
+function deletePerson(id) {
+  const index = people.findIndex((person) => person.id === id);
+  if (index === -1) return;
+  people.splice(index, 1);
+  mPeople = people.slice();
+  showPeople();
+  if (mPeople.length > 0) setPerson(mPeople[0].id);
 }
 
 let debounceTimer;
@@ -262,4 +277,68 @@ function generateSchoolHistogram() {
     entry.querySelector(".histogram-bar").style.backgroundColor = color;
     histogramTable.appendChild(entry);
   });
+}
+
+var modalContainer = document.getElementById("modal-container");
+
+function showModal(id) {
+  modalContainer.style.display = "flex";
+
+  const person = people.find((person) => person.id === id);
+  if (!person) return;
+
+  var modal = document.getElementById("modal");
+
+  modal.querySelector(
+    ".modal-title"
+  ).innerText = `Edit ${person.firstName}'s profile`;
+  modal.querySelector('input[name="id"]').value = person.id;
+  modal.querySelector('input[name="name"]').value = person.firstName;
+  modal.querySelector('input[name="school"]').value = person.school;
+  modal.querySelector('input[name="job"]').value = person.job;
+  modal.querySelector('input[name="age"]').value = person.age;
+  modal.querySelector('input[name="food"]').value = person.food;
+
+  modal.querySelector("#modal-delete").onclick = () => {
+    deletePerson(id);
+    hideModal();
+  };
+}
+
+function hideModal() {
+  modalContainer.style.display = "none";
+}
+
+function handleSubmit(evt) {
+  evt.preventDefault();
+
+  const name = evt.target.elements.name.value;
+  const school = evt.target.elements.school.value;
+  const job = evt.target.elements.job.value;
+  const age = evt.target.elements.age.value;
+  const food = evt.target.elements.food.value;
+  const id = evt.target.elements.id.value;
+
+  const person = mPeople.find((person) => {
+    return person.id === Number(id);
+  });
+  if (!person) return;
+
+  person.firstName = name;
+  person.school = school;
+  person.job = job;
+  person.age = Number(age);
+  person.food = food;
+
+  //update mPeople with the new person
+  mPeople.map((oldPerson) => {
+    if (oldPerson.id === Number(id)) {
+      return person;
+    }
+    return oldPerson;
+  });
+
+  showPeople();
+  setPerson(Number(id));
+  hideModal();
 }

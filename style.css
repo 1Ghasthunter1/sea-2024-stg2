@@ -178,7 +178,7 @@ p.bio {
     border-radius: inherit;
 }
 
-.search-input {
+input {
     padding: 10px 20px 10px 20px;
     margin-bottom: 20px;
     border-radius: 200px;
@@ -258,4 +258,46 @@ pre {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     display: grid;
     gap: 12px;
+}
+
+.login-label {
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: #b0b0b0;
+    font-weight: 500;
+}
+
+.rounded-btn-primary {
+    padding: 12px 16px 12px 16px;
+    border-radius: 200px;
+    font-size: 12px;
+    background: #10ACFF;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.rounded-btn-primary:hover {
+    background: #1d96ff;
+}
+
+.rounded-btn-secondary {
+    padding: 12px 16px 12px 16px;
+    border-radius: 200px;
+    font-size: 12px;
+    background: #313131;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.rounded-btn-secondary:hover {
+    background: #606060;
+}
+
+button {
+    border: none;
+    outline: none;
 }
