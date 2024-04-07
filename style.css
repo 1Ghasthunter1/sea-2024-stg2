@@ -4,10 +4,30 @@
     --white: hsl(334, 7%, 95%);
 }
 
+
+
+* {
+    box-sizing: border-box;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 300;
+
 }
 
 
@@ -26,7 +46,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding-top: 1rem;
 }
 
 .app-right {
@@ -53,6 +73,28 @@ body {
     display: flex
 }
 
+#people-container {
+    min-height: 100vh;
+    width: 100%
+}
+
+.person-card {
+    width: 100%;
+    background: #242424;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.2s ease-in-out;
+    cursor: pointer;
+
+}
+
+.person-card:hover {
+    background: #373737;
+}
+
+
 .user-card {
     width: 250px;
     height: 500px;
@@ -71,10 +113,10 @@ body {
 }
 
 
+
 #card-pre {
     font-size: 3rem;
     font-weight: bold;
-    font-family: inherit;
     color: #000;
     background: #FAF9F6;
     padding: 2rem;
@@ -94,6 +136,18 @@ body {
     content: "";
     position: absolute;
     border-radius: inherit;
+}
+
+.search-input {
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 200px;
+    background: #424242;
+    outline: none;
+    border: none;
+    color: white;
+    transition: outline-color 0.1s ease-in-out;
+    width: calc(100% - 50px)
 }
 
 pre {

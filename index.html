@@ -9,7 +9,31 @@
 
 <body>
     <div class="app-container">
-        <div class="app-left"></div>
+        <div class="app-left">
+            <div
+                style="margin-left: auto; margin-right: auto; color: #838383; font-size: 20px; font-weight:500; margin-bottom:16px;">
+                Hunter Snap
+            </div>
+            <input class="search-input" placeholder="Search">
+            <div id="people-container" style="color: white;">
+                <div class="person-card" id="person-card">
+                    <div style="display: flex; align-items: center; ">
+                        <img src="../img/hunter-bitmoji-pfp.webp" alt="Hunter Bitmoji" style="height:60px;"
+                            class="card-img" />
+                        <div style="margin-left: 12px;">
+                            <h3 class="card-name" style="margin-bottom: 4px;">
+                                Hunter Pruett
+                            </h3>
+                            <p class="card-school" style="color:#7f7f7f">
+                                Glendale CC
+                            </p>
+                        </div>
+                    </div>
+                    <div></div>
+
+                </div>
+            </div>
+        </div>
         <div class="app-right">
             <div class="container">
                 <div id="card-pre" style="width: 50%" class="language-css" tabindex="0">
@@ -37,6 +61,7 @@
     </div>
     </div>
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="content-script.js"></script>
 </body>
 
 </html>
