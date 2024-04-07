@@ -11,7 +11,7 @@ const people = [
     age: 20,
     pfpUrl: "/img/hunter-bitmoji-pfp.webp",
     fullUrl: "/img/hunter-bitmoji-full.webp",
-    school: "Glendale CC",
+    school: "GCC",
   },
   {
     id: 2,
@@ -59,7 +59,7 @@ const people = [
       "https://sdk.bitmoji.com/render/panel/10226013-99640376036_7-s5-v1.webp?transparent=1&scale=2",
     fullUrl:
       "https://images.bitmoji.com/3d/avatar/708455430-99640376036_7-s5-v1.webp",
-    school: "Glendale Community College",
+    school: "GCC",
   },
   {
     id: 5,
@@ -75,7 +75,7 @@ const people = [
       "https://sdk.bitmoji.com/render/panel/10226021-99843477123_10-s5-v1.webp?transparent=1&scale=2",
     fullUrl:
       "https://images.bitmoji.com/3d/avatar/708455430-99843477123_10-s5-v1.webp",
-    school: "Glendale CC",
+    school: "GCC",
   },
   {
     id: 6,
@@ -91,7 +91,7 @@ const people = [
       "https://sdk.bitmoji.com/render/panel/10226681-495738347_38-s5-v1.webp?transparent=1&scale=2",
     fullUrl:
       "https://images.bitmoji.com/3d/avatar/451978050-495738347_38-s5-v1.webp",
-    school: "Glendale CC",
+    school: "GCC",
   },
   {
     id: 7,
@@ -100,16 +100,18 @@ const people = [
     flag: "🇺🇸 🇦🇲",
     snapchat: "Harut17",
     job: "Glendale Economic Development",
-    bio: "My name is Harut and I will be transferring out of Glendale Community College this coming Fall.",
+    bio: "My name is Harut and I will be transferring out of GCC this coming Fall.",
     food: "Shawarma",
     age: 19,
     pfpUrl:
       "https://sdk.bitmoji.com/render/panel/10226019-424525581_31-s5-v1.webp?transparent=1&scale=2",
     fullUrl:
       "https://images.bitmoji.com/3d/avatar/452520973-424525581_31-s5-v1.webp",
-    school: "Glendale CC",
+    school: "GCC",
   },
 ];
+
+const colors = ["#1554d1", "#ff00ee", "#04ff00"];
 
 //make mutable copy of people
 let mPeople = people.slice();
@@ -119,8 +121,16 @@ var personCard = document.getElementById("person-card");
 var searchInput = document.querySelector(".search-input");
 var floatingCard = document.getElementById("floating-card");
 var fullBitmojiImg = document.getElementById("full-bitmoji-img");
-var personContainer = document.getElementById("person-container");
-var statsContainer = document.getElementById("stats-container");
+var floatingCardPerson = floatingCard.querySelector(".person");
+var floatingCardStats = floatingCard.querySelector(".stats");
+var histogramTable = document.getElementById("histogram-table");
+var histogramEntry = histogramTable.querySelector(".histogram-entry");
+var histogramLabel = histogramEntry.querySelector(".histogram-label");
+var histogramBar = histogramEntry.querySelector(".histogram-bar");
+
+var avgAge = floatingCardStats.querySelector(".avg-age");
+var mostPopularSchool = floatingCardStats.querySelector(".pop-school");
+var mostPopularFood = floatingCardStats.querySelector(".pop-food");
 
 function createCard(person) {
   var card = personCard.cloneNode(true);
@@ -149,8 +159,7 @@ function showPeople() {
 }
 
 function setPerson(id) {
-  personContainer.style.setProperty("display", "flex");
-  statsContainer.style.setProperty("display", "none");
+  hideStats();
 
   const person = people.find((person) => person.id === id);
   if (!person) return;
@@ -194,11 +203,63 @@ window.addEventListener("load", () => {
 searchInput.addEventListener("input", onSearchInput);
 
 function showStats() {
-  personContainer.style.setProperty("display", "none");
-  statsContainer.style.setProperty("display", "flex");
+  generateSchoolHistogram();
+  fullBitmojiImg.style.display = "none";
+  floatingCardPerson.style.display = "none";
+  floatingCardStats.style.display = "block";
+  floatingCard.style.width = "70%";
+}
+
+function hideStats() {
+  fullBitmojiImg.style.display = "block";
+  floatingCardPerson.style.display = "block";
+  floatingCardStats.style.display = "none";
+  floatingCard.style.width = "100%";
 }
 
 function signOut() {
   window.localStorage.clear();
   window.location.href = "/auth/login.html";
+}
+
+function generateSchoolHistogram() {
+  const schools = people.reduce((acc, person) => {
+    acc[person.school] = acc[person.school] ? acc[person.school] + 1 : 1;
+    return acc;
+  }, {});
+
+  const textMostPopSchool = Object.entries(schools).reduce((a, b) =>
+    a[1] > b[1] ? a : b
+  );
+  mostPopularSchool.innerText = textMostPopSchool[0];
+
+  const foods = people.reduce((acc, person) => {
+    acc[person.food] = acc[person.food] ? acc[person.food] + 1 : 1;
+    return acc;
+  }, {});
+
+  const textMostPopFood = Object.entries(foods).reduce((a, b) =>
+    a[1] > b[1] ? a : b
+  );
+
+  mostPopularFood.innerText = textMostPopFood[0];
+
+  const averageAge =
+    people.reduce((acc, person) => acc + person.age, 0) / people.length;
+
+  avgAge.innerText = Math.round(averageAge * 10) / 10;
+
+  // clear children
+  histogramTable.innerHTML = "";
+
+  Object.entries(schools).forEach(([school, count], i) => {
+    var entry = histogramEntry.cloneNode(true);
+    var color = colors[i % colors.length];
+    entry.querySelector(".histogram-label").innerText = school;
+    entry.querySelector(".histogram-bar").style.width = `${
+      (count / people.length) * 100
+    }%`;
+    entry.querySelector(".histogram-bar").style.backgroundColor = color;
+    histogramTable.appendChild(entry);
+  });
 }

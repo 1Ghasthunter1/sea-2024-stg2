@@ -22,7 +22,7 @@
           Hunter Snap
         </div>
         <div class="people-container">
-          <div class="stats-card" onclick="showStats()">
+          <div class="stats-navbar-btn" onclick="showStats()">
             <div style="display: flex; align-items: center">
               <img
                 src="https://sdk.bitmoji.com/render/panel/bafde0ca-c2bf-430d-9434-df437e85e7f1-305990390_51-s5-v1.webp?transparent=1&scale=0"
@@ -92,13 +92,14 @@
       </div>
       <div class="app-right">
         <div class="container">
-          <div class="flex-container" id="person-container">
-            <div
-              id="floating-card"
-              style="width: 100%"
-              class="language-css"
-              tabindex="0"
-            >
+          <div
+            class="floating-card"
+            id="floating-card"
+            style="width: 100%"
+            class="language-css"
+            tabindex="0"
+          >
+            <div class="person">
               <img
                 src="../img/hunter-bitmoji-pfp.webp"
                 alt="Hunter Bitmoji"
@@ -118,45 +119,102 @@
 <span class="token punctuation">}</span>
 </code></pre>
             </div>
-            <img
-              id="full-bitmoji-img"
-              src="/img/hunter-bitmoji-full.webp"
-              style="height: 65%"
-            />
-          </div>
-
-          <div class="flex-container" id="stats-container">
-            <div
-              id="floating-card"
-              style="width: 100%"
-              class="language-css"
-              tabindex="0"
-            >
-              <img
-                src="../img/hunter-bitmoji-pfp.webp"
-                alt="Hunter Bitmoji"
-                style="width: 144px; margin-top: 24px"
-              />
-              <p class="snapchat"></p>
-              <h2></h2>
-              <p class="bio"></p>
-              <pre
-                contenteditable
-                style="margin-top: 4rem"
-              ><code class="language-css"><span class="token punctuation">{</span>
-  <span class="token property">school</span><span class="token punctuation">:</span> <span class="school">GCC</span>
-  <span class="token property">favorite food</span><span class="token punctuation">:</span> <span class="food">GCC</span>
-  <span class="token property">job</span><span class="token punctuation">:</span> <span class="job">GCC</span>
-  <span class="token property">age</span><span class="token punctuation">:</span> <span class="age">19</span>
-<span class="token punctuation">}</span>
-</code></pre>
+            <div class="stats">
+              <h2>Stats 📊</h2>
+              <p>
+                Learn about the general population of my friends! Statisticians
+                only (not really).
+              </p>
+              <div class="grid-container" style="margin-top: 24px">
+                <div>
+                  <h3 style="font-size: 21px; font-weight: 500" class="avg-age">
+                    19.3 years
+                  </h3>
+                  <p>average age</p>
+                </div>
+                <div>
+                  <h3
+                    style="font-size: 21px; font-weight: 500"
+                    class="pop-food"
+                  >
+                    Sushi
+                  </h3>
+                  <p>most liked food</p>
+                </div>
+                <div>
+                  <h3
+                    style="font-size: 21px; font-weight: 500"
+                    class="pop-school"
+                  >
+                    Glendale CC
+                  </h3>
+                  <p>most common school</p>
+                </div>
+              </div>
+              <div style="margin-top: 2rem">
+                <h3 style="font-size: 21px; font-weight: 500">
+                  Food histogram
+                </h3>
+                <div style="margin-top: 1rem">
+                  <table
+                    style="width: 100%; border-spacing: 15px"
+                    id="histogram-table"
+                  >
+                    <tr class="histogram-entry">
+                      <td
+                        class="histogram-label"
+                        style="
+                          font-size: 18px;
+                          font-weight: 400;
+                          width: min-content;
+                          white-space: nowrap;
+                        "
+                      >
+                        Sushi
+                      </td>
+                      <td style="padding-left: 4px; width: 100%">
+                        <div
+                          class="histogram-bar"
+                          style="
+                            height: 24px;
+                            width: 75%;
+                            border-radius: 5px;
+                            background: #2f2f2f;
+                          "
+                        ></div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td
+                        style="
+                          font-size: 18px;
+                          font-weight: 400;
+                          width: min-content;
+                        "
+                      >
+                        Steak
+                      </td>
+                      <td style="padding-left: 4px; width: 100%">
+                        <div
+                          style="
+                            height: 24px;
+                            width: 75%;
+                            border-radius: 5px;
+                            background: #efefef;
+                          "
+                        ></div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
             </div>
-            <img
-              id="full-bitmoji-img"
-              src="/img/hunter-bitmoji-full.webp"
-              style="height: 65%"
-            />
           </div>
+          <img
+            id="full-bitmoji-img"
+            src="/img/hunter-bitmoji-full.webp"
+            style="height: 65%"
+          />
         </div>
       </div>
     </div>

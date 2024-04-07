@@ -1,6 +1,5 @@
 var pre = document.getElementById("floating-card");
 
-
 document.addEventListener("mousemove", (e) => {
   rotateElement(e, pre);
 });
@@ -35,8 +34,6 @@ function rotateElement(event, element) {
   const offsetX = ((x - middleX) / middleX) * 45;
   const offsetY = ((y - middleY) / middleY) * 45;
 
-  element.style.setProperty("--rotateX", offsetX + "deg");
-  element.style.setProperty("--rotateY", -1 * offsetY + "deg");
+  pre.style.setProperty("--rotateX", offsetX + "deg");
+  pre.style.setProperty("--rotateY", -1 * offsetY + "deg");
 }
-
-

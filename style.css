@@ -80,7 +80,7 @@ p.bio {
     background-size: cover;
     background-position: center;
     position: relative;
-    justify-content: space-between;
+    justify-content: center;
     padding-left: 72px;
     padding-right: 72px;
     align-items: center;
@@ -89,7 +89,6 @@ p.bio {
 }
 
 .people-container {
-    /* min-height: 100vh; */
     width: 100%
 }
 
@@ -109,7 +108,7 @@ p.bio {
 }
 
 
-.stats-card {
+.stats-navbar-btn {
     color: #fff;
     width: 100%;
     background: #10ACFF;
@@ -121,7 +120,7 @@ p.bio {
     cursor: pointer;
 }
 
-.stats-card:hover {
+.stats-navbar-btn:hover {
     background: #1d96ff;
 }
 
@@ -132,9 +131,8 @@ p.bio {
 .flex-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     height: 100%;
-
 }
 
 
@@ -163,7 +161,7 @@ p.bio {
     color: #000;
     background: #FAF9F6;
     padding: 2rem;
-    border-radius: 1rem;
+    border-radius: 2.2rem;
     width: 5px;
     transform-style: preserve-3d;
     transform: perspective(3000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
@@ -254,4 +252,10 @@ pre {
 
 #floating-card>h2 {
     font-family: "system-ui";
+}
+
+.grid-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: grid;
+    gap: 12px;
 }
