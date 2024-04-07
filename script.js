@@ -37,3 +37,8 @@ function rotateElement(event, element) {
   element.style.setProperty("--rotateX", offsetX + "deg");
   element.style.setProperty("--rotateY", -1 * offsetY + "deg");
 }
+
+function signOut() {
+  window.localStorage.clear();
+  window.location.href = "/auth/login.html";
+}

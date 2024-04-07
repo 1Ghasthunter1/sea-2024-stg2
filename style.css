@@ -85,8 +85,8 @@ p.bio {
     display: flex
 }
 
-#people-container {
-    min-height: 100vh;
+.people-container {
+    /* min-height: 100vh; */
     width: 100%
 }
 
@@ -99,12 +99,30 @@ p.bio {
     justify-content: space-between;
     transition: background 0.2s ease-in-out;
     cursor: pointer;
-
 }
 
 .person-card:hover {
     background: #373737;
 }
+
+
+.stats-card {
+    color: #fff;
+    width: 100%;
+    background: #10ACFF;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.stats-card:hover {
+    background: #1d96ff;
+}
+
+
 
 
 .user-card {
@@ -127,7 +145,7 @@ p.bio {
 
 
 #floating-card {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #000;
     background: #FAF9F6;
@@ -163,8 +181,7 @@ p.bio {
 
 pre {
     font-family: "Consolas";
-
-    font-size: 36px;
+    font-size: 24px;
     background: #242323;
     border-radius: 20px;
     padding: 24px;
@@ -185,6 +202,22 @@ pre {
 
 .property+.punctuation {
     color: var(--pink);
+}
+
+.hover-btn {
+    margin-top: auto;
+    margin-left: auto;
+    padding: 12px;
+    color: rgb(195, 195, 195);
+    border-radius: 2000px;
+    display: flex;
+    align-items: center;
+    cursor: pointer
+}
+
+.hover-btn:hover {
+    background: #4e4e4e;
+    color: #fff
 }
 
 /* shadow */
