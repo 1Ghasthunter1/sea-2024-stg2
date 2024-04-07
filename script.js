@@ -1,4 +1,4 @@
-const pre = document.getElementById("card-pre");
+const pre = document.getElementById("floating-card");
 
 document.addEventListener("mousemove", (e) => {
   rotateElement(e, pre);

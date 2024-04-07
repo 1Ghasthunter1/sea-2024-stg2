@@ -114,7 +114,7 @@ p {
 
 
 
-#card-pre {
+#floating-card {
     font-size: 3rem;
     font-weight: bold;
     color: #000;
@@ -127,12 +127,12 @@ p {
     transform: perspective(3000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
 }
 
-#card-pre>* {
+#floating-card>* {
     margin-block: 0;
 }
 
-#card-pre::before,
-#card-pre::after {
+#floating-card::before,
+#floating-card::after {
     content: "";
     position: absolute;
     border-radius: inherit;
@@ -176,7 +176,7 @@ pre {
 }
 
 /* shadow */
-#card-pre::before {
+#floating-card::before {
     inset: 0.75rem;
     border-radius: inherit;
     background: black;
@@ -187,17 +187,9 @@ pre {
 }
 
 /* gradient thingy */
-#card-pre::after {
+#floating-card::after {
     z-index: -2;
     inset: -1rem;
     background: linear-gradient(-45deg, rgb(255, 248, 36), rgb(255, 244, 37));
     transform: translateZ(-50px);
-}
-
-
-
-.pre-container {
-    position: relative;
-    display: grid;
-    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
