@@ -26,7 +26,19 @@ h3 {
 
 p {
     font-size: 14px;
+    color: #5e5e5e;
     font-weight: 300;
+
+}
+
+p.snapchat {
+    font-size: 20px;
+}
+
+p.bio {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
 
 }
 
@@ -122,7 +134,6 @@ p {
     padding: 2rem;
     border-radius: 1rem;
     width: 5px;
-    font-family: "Consolas";
     transform-style: preserve-3d;
     transform: perspective(3000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
 }
@@ -151,6 +162,7 @@ p {
 }
 
 pre {
+    font-family: "Consolas";
 
     font-size: 36px;
     background: #242323;
@@ -192,4 +204,8 @@ pre {
     inset: -1rem;
     background: linear-gradient(-45deg, rgb(255, 248, 36), rgb(255, 244, 37));
     transform: translateZ(-50px);
+}
+
+#floating-card>h2 {
+    font-family: "system-ui";
 }
