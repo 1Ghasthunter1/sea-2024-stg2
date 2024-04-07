@@ -3,6 +3,8 @@ const config = {
   password: "password",
 };
 
+var passwordHintElement = document.getElementById("password-hint");
+
 function authenticate(username, password) {
   return username === config.username && password === config.password;
 }
@@ -35,4 +37,9 @@ function login() {
       errorP.innerText = "Invalid username or password";
     }
   }, 1000);
+}
+
+function showPasswordHint() {
+  passwordHintElement.innerHTML =
+    "User: " + config.username + " Password: " + config.password;
 }

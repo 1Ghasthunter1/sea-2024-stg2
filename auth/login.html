@@ -4,7 +4,6 @@
     <title>Login | HunterSnap</title>
     <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="script.js"></script>
   </head>
 
   <body>
@@ -60,15 +59,26 @@
               />
             </svg>
           </button>
-          <a
-            href="https://google.com"
+          <div
             class="secondary-p"
-            style="margin-left: auto; margin-bottom: 0"
+            style="
+              margin-left: auto;
+              margin-bottom: 0;
+              text-decoration: underline;
+              cursor: pointer;
+            "
+            onclick="showPasswordHint()"
           >
             Forgot your password?
-          </a>
+          </div>
+          <p
+            class="secondary-p"
+            id="password-hint"
+            style="margin-left: auto; margin-bottom: 0; cursor: pointer"
+          ></p>
         </form>
       </div>
     </div>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
