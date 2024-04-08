@@ -15,7 +15,7 @@ For authentication:
 
 ### Resources Used
 - Bitmoji URL's to show friend bitmojis, both face shots and full-body images.
-- Snapchat's cloud background img from [web.snapchat.com](https://web.snapchat.com "web.snapchat.com").
+- Snapchat's web platform [web.snapchat.com](https://web.snapchat.com "web.snapchat.com") for significant design inspiration, and the cloud image from snap web as well.
 - [Kevin Powell's Video](https://www.youtube.com/watch?v=Z-3tPXf9a7M "Kevin Powell's Video") on how to build a 3D-rotating card. I started with his code, and modified it to suit the needs of HunterSnap. Much of his original styling and JS logic remains, but I've added comments to demonstrate I know exactly what's going on with floating cards.
 
 ### Fun things to try
