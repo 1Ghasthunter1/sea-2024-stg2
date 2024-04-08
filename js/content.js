@@ -166,9 +166,9 @@ function setPerson(id) {
 
   const person = people.find((person) => person.id === id);
   if (!person) return;
-  floatingCard.querySelector(
-    "h2"
-  ).innerText = `${person.firstName} ${person.lastName[0]}.`;
+  floatingCard.querySelector("h2").innerText = `${person.firstName}${
+    person.lastName.length > 0 ? ` ${person.lastName[0]}.` : ""
+  }`;
   floatingCard.querySelector("img").src = person.pfpUrl;
   floatingCard.querySelector(".bio").innerText = person.bio;
   floatingCard.querySelector(
@@ -324,10 +324,19 @@ function handleSubmit(evt) {
   });
   if (!person) return;
 
+  if (name.length === 0) {
+    alert("Please enter a name");
+    return;
+  }
+
   var names = name.split(" ");
 
-  const firstName = names[0];
-  const lastName = names.length > 0 ? names[1] : "";
+  console.log(names);
+
+  var firstName = names[0];
+  var lastName = names.length > 1 ? names[1] : "";
+
+  console.log(lastName);
 
   person.firstName = firstName;
   person.lastName = lastName;
