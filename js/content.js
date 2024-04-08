@@ -291,9 +291,9 @@ function showModal(id) {
     ".modal-title"
   ).innerText = `Edit ${person.firstName}'s profile`;
   modal.querySelector('input[name="id"]').value = person.id;
-  modal.querySelector(
-    'input[name="name"]'
-  ).value = `${person.firstName} ${person.lastName}`;
+  modal.querySelector('input[name="name"]').value = `${person.firstName}${
+    person.lastName != "" ? ` ${person.lastName}` : ""
+  }`;
   modal.querySelector('input[name="school"]').value = person.school;
   modal.querySelector('input[name="job"]').value = person.job;
   modal.querySelector('input[name="age"]').value = person.age;
