@@ -1,0 +1,22 @@
+function BellmanFord(graph, source):
+
+    distances = new Array(graph.numVertices)
+    predecessors = new Array(graph.numVertices)
+    for each vertex in graph:
+        distances[vertex] = infinity
+        predecessors[vertex] = null
+    distances[source] = 0
+
+
+    for i from 1 to graph.numVertices - 1:
+        for each edge (u, v, weight) in graph.edges:
+            if distances[u] + weight < distances[v]:
+                distances[v] = distances[u] + weight
+                predecessors[v] = u
+
+
+    for each edge (u, v, weight) in graph.edges:
+        if distances[u] + weight < distances[v]:
+            return "Graph contains a negative cycle"
+
+    return distances, predecessors

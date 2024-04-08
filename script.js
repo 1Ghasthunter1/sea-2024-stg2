@@ -4,10 +4,6 @@ document.addEventListener("mousemove", (e) => {
   rotateElement(e, pre);
 });
 
-if (!window.localStorage.getItem("auth")) {
-  window.location.href = "/auth/login.html";
-}
-
 function rotateElement(event, element) {
   const x = event.clientX;
   const y = event.clientY;
