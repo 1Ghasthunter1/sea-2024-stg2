@@ -102,7 +102,7 @@
         >
           Hunter Snap
         </div>
-        <div class="people-container">
+        <div class="navbar-container">
           <div class="stats-navbar-btn" onclick="showStats()">
             <div style="display: flex; align-items: center">
               <img
@@ -128,8 +128,8 @@
         <input id="search-bar" placeholder="Search" style="margin-top: 24px" />
 
         <div
-          id="people-container"
-          class="people-container"
+          id="people-card-container"
+          class="navbar-container"
           style="color: white"
         >
           <div class="person-card" id="person-card">
@@ -208,10 +208,10 @@
                 contenteditable
                 style="margin-top: 4rem"
               ><code class="language-css"><span class="token punctuation">{</span>
-  <span class="token property">school</span><span class="token punctuation">:</span> <span class="school">GCC</span>
-  <span class="token property">favorite food</span><span class="token punctuation">:</span> <span class="food">GCC</span>
-  <span class="token property">job</span><span class="token punctuation">:</span> <span class="job">GCC</span>
-  <span class="token property">age</span><span class="token punctuation">:</span> <span class="age">19</span>
+  <span class="property">school</span><span class="punctuation">:</span> <span class="school">GCC</span>
+  <span class="property">favorite food</span><span class="punctuation">:</span> <span class="food">GCC</span>
+  <span class="property">job</span><span class="punctuation">:</span> <span class="job">GCC</span>
+  <span class="property">age</span><span class="punctuation">:</span> <span class="age">19</span>
 <span class="token punctuation">}</span>
 </code></pre>
             </div>
@@ -224,7 +224,7 @@
               <div class="grid-container" style="margin-top: 24px">
                 <div>
                   <h3 style="font-size: 21px; font-weight: 500" class="avg-age">
-                    19.3 years
+                    --
                   </h3>
                   <p>average age</p>
                 </div>
@@ -233,7 +233,7 @@
                     style="font-size: 21px; font-weight: 500"
                     class="pop-food"
                   >
-                    Sushi
+                    --
                   </h3>
                   <p>most liked food</p>
                 </div>
@@ -242,7 +242,7 @@
                     style="font-size: 21px; font-weight: 500"
                     class="pop-school"
                   >
-                    Glendale CC
+                    --
                   </h3>
                   <p>most common school</p>
                 </div>
@@ -257,48 +257,9 @@
                     id="histogram-table"
                   >
                     <tr class="histogram-entry">
-                      <td
-                        class="histogram-label"
-                        style="
-                          font-size: 18px;
-                          font-weight: 400;
-                          width: min-content;
-                          white-space: nowrap;
-                        "
-                      >
-                        Sushi
-                      </td>
+                      <td class="histogram-label">Sushi</td>
                       <td style="padding-left: 4px; width: 100%">
-                        <div
-                          class="histogram-bar"
-                          style="
-                            height: 24px;
-                            width: 75%;
-                            border-radius: 5px;
-                            background: #2f2f2f;
-                          "
-                        ></div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        style="
-                          font-size: 18px;
-                          font-weight: 400;
-                          width: min-content;
-                        "
-                      >
-                        Steak
-                      </td>
-                      <td style="padding-left: 4px; width: 100%">
-                        <div
-                          style="
-                            height: 24px;
-                            width: 75%;
-                            border-radius: 5px;
-                            background: #efefef;
-                          "
-                        ></div>
+                        <div class="histogram-bar"></div>
                       </td>
                     </tr>
                   </table>

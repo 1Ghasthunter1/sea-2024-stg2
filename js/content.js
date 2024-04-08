@@ -116,7 +116,7 @@ const colors = ["#1554d1", "#ff00ee", "#04ff00"];
 //make mutable copy of people
 let mPeople = people.slice();
 
-var peopleContainer = document.getElementById("people-container");
+var peopleContainer = document.getElementById("people-card-container");
 var personCard = document.getElementById("person-card");
 var searchInput = document.querySelector("#search-bar");
 var floatingCard = document.getElementById("floating-card");
