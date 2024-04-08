@@ -3,7 +3,7 @@
   <head>
     <title>Login | HunterSnap</title>
     <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css/login.css" />
   </head>
 
   <body>
@@ -15,14 +15,15 @@
           style="width: 72px; margin-top: 24px"
         />
         <h2>Log in to Hunter Chat</h2>
-        <form class="sign-in-container">
-          <label for="username" class="login-label">Username or Email</label>
+        <form class="sign-in-container" onsubmit="handleLogin(event)">
+          <label for="identifier" class="login-label">Username or Email</label>
           <input
             class="sign-in-form"
-            name="username"
-            autocomplete="username"
+            name="identifier"
+            autocomplete="email"
             type="text"
-            id="username"
+            id="identifier"
+            required
           />
           <label for="password" class="login-label" style="margin-top: 12px"
             >Password</label
@@ -33,6 +34,7 @@
             autocomplete="username"
             type="password"
             id="password"
+            required
           />
 
           <p class="login-error" id="login-error">
@@ -40,9 +42,8 @@
           </p>
 
           <button
-            onclick="login()"
             class="sign-in-button"
-            type="button"
+            type="submit"
             id="login-button"
             style="margin-top: 12px"
           >
@@ -79,6 +80,6 @@
         </form>
       </div>
     </div>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="../js/auth.js"></script>
   </body>
 </html>

@@ -1,19 +1,19 @@
 const config = {
-  username: "admin",
+  identifier: "admin",
   password: "password",
 };
 
-//
-
 var passwordHintElement = document.getElementById("password-hint");
 
-function authenticate(username, password) {
-  return username === config.username && password === config.password;
+function authenticate(ident, pass) {
+  return ident === config.identifier && pass === config.password;
 }
 
-function login() {
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
+function handleLogin(evt) {
+  evt.preventDefault();
+
+  const identifier = evt.target.elements.identifier.value;
+  const password = evt.target.elements.password.value;
 
   //grab the element that is child of the sign in button with classname spinner
   let spinner = document.querySelector(".spinner");
@@ -27,7 +27,7 @@ function login() {
 
   //delay for 1 second
   setTimeout(() => {
-    const authResult = authenticate(username, password);
+    const authResult = authenticate(identifier, password);
     spinner.style.display = "none";
     loginButton.disabled = false;
 
