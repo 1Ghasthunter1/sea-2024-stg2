@@ -1,6 +1,6 @@
 const config = {
   identifier: "admin",
-  password: "password",
+  password: "huntersnap2024",
 };
 
 var passwordHintElement = document.getElementById("password-hint");

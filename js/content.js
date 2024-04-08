@@ -9,8 +9,10 @@ const people = [
     bio: "Moving the needle in humanitarian initiatives aid through tech. Part-time altar boy at St Sophia Cathedral.",
     food: "Armenian BBQ",
     age: 20,
-    pfpUrl: "/img/hunter-bitmoji-pfp.webp",
-    fullUrl: "/img/hunter-bitmoji-full.webp",
+    pfpUrl:
+      "https://sdk.bitmoji.com/render/panel/10226428-305990390_51-s5-v1.webp?transparent=1&scale=2",
+    fullUrl:
+      "https://images.bitmoji.com/3d/avatar/452520973-305990390_51-s5-v1.webp",
     school: "GCC",
   },
   {
