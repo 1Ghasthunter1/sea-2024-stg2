@@ -43,5 +43,5 @@ function handleLogin(evt) {
 
 function showPasswordHint() {
   passwordHintElement.innerHTML =
-    "User: " + config.username + " Password: " + config.password;
+    "User: " + config.identifier + " Password: " + config.password;
 }
