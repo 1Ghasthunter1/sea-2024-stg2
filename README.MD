@@ -7,9 +7,9 @@ For authentication:
 - username: **admin**
 - password: **huntersnap2024**
 
-### Key  Features
+### Key Features
 - **Authentication**: keep your friend information safe and sound from pesky strangers! (not real authentication: just uses `localStorage`)
-- **Searching**: Search through my deep list of, you guessed it, 6 entire friends!
+- **Searching**: Search through my deep list of, you guessed it, 7 entire friends!
 - **Editing/Deleting**: Don't like one of my friends, or want to remove them altogether? Not a problem! Use the edit button on the top right of the floating cards.
 - **Data Aggregation**: Use the data aggregation to see useful statistics about the incredibly large friend population available. Aggregations include favorite food, most common school, average age, and a bar chart of schools.
 
@@ -20,8 +20,8 @@ For authentication:
 
 ### Fun things to try
 - **Edit and check stats**: Change people's info like age, favorite meal, and favorite food, and go back to the stats window to watch it update.
-- **Play around with the 3D card**: Nothing very data-structure related here, but kind of fun. And, yes, the `pre` is `contenteditable`, so you can write in that code box! Does not save unfortunately , but will update if you edit through the edit modal :)
+- **Play around with the 3D card**: Nothing very data-structure related here, but kind of fun. And, yes, the `pre` is `contenteditable`, so you can write in that code box! Does not save unfortunately, but will update if you edit through the edit modal :)
 
 ---
 ### npm in this project
-Node's npm (node-package-manager) is only used for **development purposes only** for static hosting. The final deploy on Netlify does not use npm and is simply static hosting HTML, CSS, and JS files.
+Node's npm (node-package-manager) is only used for **development purposes** for static hosting. The final deploy on Netlify does not use npm and is simply static hosting HTML, CSS, and JS files.
